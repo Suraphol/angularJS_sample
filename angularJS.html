@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title>AngularJS</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/angular.min.js"></script>
+</head>
+<body ng-init="names=[
+		{'name':'Samsal', 'country':'Thailand', 'salary':5000},
+		{'name':'Peter', 'country':'USA', 'salary':4000},
+		{'name':'Marry', 'country':'UK', 'salary':9877}
+	]">
+	<div class="container">
+		<h1>AngularJS</h1>
+		<input type="text" class="form-control" ng-model="querString.name" placeholder="Filter by"><br>
+		<input type="radio" value="name" ng-model="sortString">Sorted By Name
+		<input type="radio" value="-name" ng-model="sortString">Sorted By Name (Descending)
+		<input type="radio" value="country" ng-model="sortString">Sorted By country
+		<p>Filered by: {{ name}}</p>
+		
+		<table class="table">
+			<tr ng-repeat="n in names|filter:querString|orderBy:sortString">
+				<td>{{n.name}} </td>
+				<td>{{n.country}} </td>
+				<td>{{n.salary | currency:'TH'}}</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

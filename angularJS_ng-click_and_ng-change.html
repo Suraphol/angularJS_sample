@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title>AngularJS</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+	<div class="container" ng-controller="homeController">
+		<h2>AngularJS_ng-Click and ng-change</h2>
+		<h3>Controller Name: {{controllerName}} </h3>
+
+		<button ng-click="controllerName='AAA'">Click Me</button>
+		<a href="#" class="btn btn-primary" ng-click="controllerName='BBB'">Click Me</a>
+		<input type="checkbox" ng-click="checked=!checked" ng-init="checked=false">Check Me
+		<input type="radio" ng-click="checked">Is Checked
+		<p>{{checked}} </p>
+		<hr>
+		<a href="#" class="btn btn-primary" ng-click="doSomething()">Click Me</a>
+		<a href="#" class="btn btn-primary" ng-click="doAnotherThing('Ok....')">Click Me Too</a>
+		<hr>
+
+		<a href="#" class="btn btn-primary" ng-click="shown=!shown">Click Me</a>
+		<h3 ng-show="shown" ng-init="shown=false">Can you see me???</h3>
+		<hr>
+
+		<input type="text" class="form-control" ng-model="name" ng-change="modified=true" ng-init="modified=false">
+		
+		<input type="checkbox" ng-model="yes" ng-change="modified=true">
+
+		{{modified}}
+		<a href="#" class="btn btn-primary" ng-show="modified">Save</a>
+
+	</div>
+
+</body>
+</html>

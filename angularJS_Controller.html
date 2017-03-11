@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title>AngularJS</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script>
+		function homeController($scope){
+			$scope.controllerName = 'This is homeController';
+			$scope.price = 100;
+
+			$scope.showText = function(){
+				return 'Hello, this is showText()';
+			}
+		}
+
+		function anotherController($scope){
+			$scope.controllerName='This is anotherController';
+		}
+
+		lastController = function($scope){
+			$scope.controllerName='This is lastController';
+		}
+	</script>
+	
+</head>
+<body>
+	<div class="container" >
+		<h1>AngularJS Controller</h1>
+		<div ng-controller="homeController">
+			<h3> {{controllerName+ ' '+ showText()}} </h3>
+			
+			<input type="number" class="form-control" ng-model="price">
+			<p>Pricex2: <span ng-bind="price * 2"></span></p>
+		</div>
+
+		<div ng-controller="anotherController">
+			<h3>{{controllerName}} </h3>
+		</div>
+	</div>
+
+</body>
+</html>

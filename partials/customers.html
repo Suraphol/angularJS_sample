@@ -1,0 +1,7 @@
+<h3>Customers</h3>
+<h4>Controller Name: {{controllerName}}</h4>
+
+<h4>Customer List</h4>
+<ul ng-repeat="c in customers">
+	<li><a href="#/customers/{{c.zip}}">{{c.province+' # '+c.district}}</a> </li>
+</ul>

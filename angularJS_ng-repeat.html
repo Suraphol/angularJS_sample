@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title>AngularJS</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/angular.min.js"></script>
+</head>
+<body ng-init="customers=[
+			{'name':'John', 'age':50, 'country':'USA'},
+			{'name':'Peter', 'age':29, 'country':'UK'},
+			{'name':'Somchai', 'age':43, 'country':'Thai'},
+			{'name':'Yang', 'age':30, 'country':'China'}
+			];
+			suppliers=[]">
+	<div class="container">
+		<h1>AngularJS ng-repeat</h1>
+		{{customers.length}}
+		
+		<div ng-if="customers.length == 0">AA</div>
+		<div ng-if="suppliers.length == 0">BB</div>
+
+		<div ng-if="customers.length >0">
+		<table class="table">
+			<tr ng-repeat="c in customers|orderBy:'-name'|filter:{country:'a'}">
+				<td>{{c.name}} </td>
+				<td>{{c.age}} </td>
+				<td>{{c.country}} </td>
+			</tr>
+
+		</table>
+		</div>
+
+		<div ng-if="suppliers.length==0">There is no suppliers</div>
+	</div>
+</body>
+</html>

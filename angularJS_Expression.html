@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title>AngularJS</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/angular.min.js"></script>
+</head>
+<body ng-init="price=100;qty=20;
+				arr=['A','B','C'];
+				obj={'name':'A', 'age':50};
+				arrObj=[{'name':'A', 'age':50},
+				{'name':'B', 'age':594},
+				{'name':'C', 'age':500}]">
+	<div class="container">
+		<h1>AngularJS Expression</h1>
+		Total Price:{{price * qty | currency:'THB'}}
+		<hr>
+
+		<p>Total Price 2: <span ng-bind="price * qty |currency:'TH'"></span> </p><hr>
+
+		<input type="number" class="form-control" ng-model="price">
+		<hr>
+		{{arr}}<br>
+		{{obj.age}}<br>
+		{{arrObj[1].name}}
+	</div>
+</body>
+</html>
